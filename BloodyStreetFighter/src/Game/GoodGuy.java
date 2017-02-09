@@ -89,4 +89,6 @@ public class GoodGuy extends Player{
 	public String toString(){
 		return ("This Player is level " + super.getLevel() + ", has " + getHitpoints());
 	}// end useless toString
+	
+	
 }//end goodGuy class
