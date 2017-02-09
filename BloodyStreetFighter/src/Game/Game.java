@@ -19,26 +19,64 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Game.
+ */
 public class Game extends Application {
+	
+	/** The primary stage. */
 	private Stage primaryStage;
+	
+	/** The player. */
 	GoodGuy player = new GoodGuy(1);
+	
+	/** The bad guy. */
 	BadGuy badGuy = new BadGuy(player.getLevel());
+	
+	/** The ryu. */
 	String ryu = new String("/Images/ryu_third_strike_hd_by_steamboy33-d4tcf9b.gif");
+	
+	/** The spider. */
 	String spider = new String("/Images/spidat.gif");
+	
+	/** The mummy. */
 	String mummy = new String("/Images/Mummy_Zombie.gif");
+	
+	/** The alien. */
 	String alien = new String("/Images/green-alien-walking-b.gif");
+	
+	/** The cookie. */
 	String cookie = new String("/Images/cookie-monster1-35823.gif");
+	
+	/** The smart guy. */
 	String smartGuy = new String("/Images/animated-fight-image-0025.gif");
+	
+	/** The zombie. */
 	String zombie = new String("/Images/zombie.gif");
+	
+	/** The bad pool. */
 	final String []badPool = {ryu, spider, mummy, alien, cookie, smartGuy, zombie};
+	
+	/** The fighter 1. */
 	Image fighter1;
+	
+	/** The fighter 2. */
 	Image fighter2;
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		launch(args);
     
 	}
 	
+	/* (non-Javadoc)
+	 * @see javafx.application.Application#start(javafx.stage.Stage)
+	 */
 	@Override // Override the start method in the Application class
 	public void start(Stage primaryStage) {
 		
@@ -48,7 +86,12 @@ public class Game extends Application {
 		intro();
 	    
 	}
-	//this is the first page that will show up
+	
+	/**
+	 * Intro.
+	 * this is the first page that will show up
+	 */
+	
 	public void intro() {
 		Pane pane = new Pane();
 		Image background = new Image("/Images/cityBackground.jpg");
@@ -114,7 +157,11 @@ public class Game extends Application {
 	    
 	} // end into scene method
 	
-	// this is the actual fight scene
+	/**
+	 * Fight scene.
+	 * this is the actual fight scene
+	 */
+	
 	public void fightScene(){
 	
 	// rectangles the represent health bar
@@ -258,20 +305,36 @@ public class Game extends Application {
     primaryStage.show(); // Display the stage
 	} // end fightScene method
 	
-	// decides how much the hit is for
+	/**
+	 * Hit.
+	 * decides how much the hit is for
+	 *
+	 * @return the int
+	 */
+	
 	public static int hit () {
 		int hit = (int)(Math.random() * 5);
 		return hit;
 	} //end hit method
 	
-	// decides how much to heal
+	/**
+	 * Heal.
+	 * decides how much to heal
+	 * 
+	 * @return the int
+	 */
+	 
 	public static int heal() {
 		int heal = (int)((Math.random() * 7) + 5); //cannot be lower than 5
 
 		return heal;
 	} //end heal method
 	
-	// if player wins the round
+	/**
+	 * Winner screen.
+	 * if player wins the round
+	 */
+	
 	public void winnerScreen() {
 		Image background = new Image("/Images/cityBackground.jpg");
 			
@@ -323,7 +386,11 @@ public class Game extends Application {
 		
 		}// end winner screen scene
 	
-	// game over scene
+	/**
+	 * Game over.
+	 * game over scene
+	 */
+	
 	public void gameOver() {
 		Image background = new Image("/Images/cityBackground.jpg");
 		
@@ -370,7 +437,13 @@ public class Game extends Application {
 	
 	} // end gameOver scene
 	
-	// method to select the badguy model randomly
+	/**
+	 * Badguy selection.
+	 * method to select the badguy model randomly
+	 * @param badPool the bad pool
+	 * @return the string
+	 */
+	
 	public static String badguySelection(String[] badPool ) {
 		int location = (int)(Math.random() * badPool.length);
 		String badguy;
@@ -378,7 +451,10 @@ public class Game extends Application {
 		return badguy;
 	} // end bad guy selection
 	
-	// scene for character selection of good guy
+	/**
+	 * Character select.
+	 * scene for character selection of good guy
+	 */
 	public void characterSelect() {
 		Pane pane = new Pane();
 		Image background = new Image("/Images/cityBackground.jpg");
