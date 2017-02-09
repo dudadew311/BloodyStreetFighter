@@ -23,13 +23,13 @@ public class Game extends Application {
 	private Stage primaryStage;
 	GoodGuy player = new GoodGuy(1);
 	BadGuy badGuy = new BadGuy(player.getLevel());
-	String ryu = new String("ryu_third_strike_hd_by_steamboy33-d4tcf9b.gif");
-	String spider = new String("spidat.gif");
-	String mummy = new String("Mummy_Zombie.gif");
-	String alien = new String("green-alien-walking-b.gif");
-	String cookie = new String("cookie-monster1-35823.gif");
-	String smartGuy = new String("animated-fight-image-0025.gif");
-	String zombie = new String("zombie.gif");
+	String ryu = new String("/Images/ryu_third_strike_hd_by_steamboy33-d4tcf9b.gif");
+	String spider = new String("/Images/spidat.gif");
+	String mummy = new String("/Images/Mummy_Zombie.gif");
+	String alien = new String("/Images/green-alien-walking-b.gif");
+	String cookie = new String("/Images/cookie-monster1-35823.gif");
+	String smartGuy = new String("/Images/animated-fight-image-0025.gif");
+	String zombie = new String("/Images/zombie.gif");
 	final String []badPool = {ryu, spider, mummy, alien, cookie, smartGuy, zombie};
 	Image fighter1;
 	Image fighter2;
@@ -51,9 +51,9 @@ public class Game extends Application {
 	//this is the first page that will show up
 	public void intro() {
 		Pane pane = new Pane();
-		Image background = new Image("cityBackground.jpg");
-		Image title = new Image("StreetFighter.png"); 
-		ImageView kenRyu = new ImageView("Ryu_and_ken_hadoken_double_hit.gif");
+		Image background = new Image("/Images/cityBackground.jpg");
+		Image title = new Image("/Images/StreetFighter.png"); 
+		ImageView kenRyu = new ImageView("/Images/Ryu_and_ken_hadoken_double_hit.gif");
 		
 		
 		// the graphics of Ken and Ryu in the intro
@@ -273,13 +273,13 @@ public class Game extends Application {
 	
 	// if player wins the round
 	public void winnerScreen() {
-		Image background = new Image("cityBackground.jpg");
+		Image background = new Image("/Images/cityBackground.jpg");
 			
 		    
 		    Pane winnerPlayer = new Pane();
 		    VBox winner = new VBox();
-		    ImageView youWin = new ImageView(new Image("You-win.gif"));		    
-		    ImageView stormTrooper = new ImageView(new Image("stormtrooper-dancing-animated-gif-win-rz.gif"));
+		    ImageView youWin = new ImageView(new Image("/Images/You-win.gif"));		    
+		    ImageView stormTrooper = new ImageView(new Image("/Images/stormtrooper-dancing-animated-gif-win-rz.gif"));
 		    
 		    winner.getChildren().addAll(youWin, stormTrooper);
 		    
@@ -325,10 +325,10 @@ public class Game extends Application {
 	
 	// game over scene
 	public void gameOver() {
-		Image background = new Image("cityBackground.jpg");
+		Image background = new Image("/Images/cityBackground.jpg");
 		
 	    Pane pane = new Pane();
-	    Image gameOver = new Image("drax-gameover.gif");
+	    Image gameOver = new Image("/Images/drax-gameover.gif");
 
 	    ImageView youLost = new ImageView(gameOver);
 	    youLost.setLayoutX(250);
@@ -381,13 +381,13 @@ public class Game extends Application {
 	// scene for character selection of good guy
 	public void characterSelect() {
 		Pane pane = new Pane();
-		Image background = new Image("cityBackground.jpg");
+		Image background = new Image("/Images/cityBackground.jpg");
 		
 		Pane characters = new HBox(20);
-		ImageView ken = new ImageView( new Image("Ken_face.gif"));
-		ImageView guile = new ImageView( new Image("guile_portrait.gif"));
-		ImageView chunLi = new ImageView(new Image("Chun-li.gif"));
-		ImageView dhalsim = new ImageView(new Image("Dhalsim_face.gif"));
+		ImageView ken = new ImageView( new Image("/Images/Ken_face.gif"));
+		ImageView guile = new ImageView( new Image("/Images/guile_portrait.gif"));
+		ImageView chunLi = new ImageView(new Image("/Images/Chun-li.gif"));
+		ImageView dhalsim = new ImageView(new Image("/Images/Dhalsim_face.gif"));
 		
 		ken.setFitWidth(100);
 		ken.setPreserveRatio(true);
@@ -410,25 +410,25 @@ public class Game extends Application {
 	  
 		// handler to select Ken
 		ken.setOnMousePressed(e -> {
-			fighter1 = new Image("ken_idle_final_g.gif");
+			fighter1 = new Image("/Images/ken_idle_final_g.gif");
 			fightScene();
 			}); // end ken handler
 		
 		// handler to select Guile
 		guile.setOnMousePressed(e -> {
-			fighter1 = new Image("Guile-hdstance.gif");
+			fighter1 = new Image("/Images/Guile-hdstance.gif");
 			fightScene();
 			}); //end Guile handler
 		
 		// handler to select Chun Li
 		chunLi.setOnMousePressed(e -> {
-			fighter1 = new Image("Chunli-hdstance.gif");
+			fighter1 = new Image("/Images/Chunli-hdstance.gif");
 			fightScene();
 			}); // end Chun Li handler
 		
 		// handler to select Dhalsim
 		dhalsim.setOnMousePressed(e -> {
-			fighter1 = new Image("Dhalsim-hdstance.gif");
+			fighter1 = new Image("/Images/Dhalsim-hdstance.gif");
 			fightScene();
 			}); // end Dhalsim handler
 
